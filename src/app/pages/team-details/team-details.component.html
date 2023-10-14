@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <ng-container *ngFor="let header of tableHeader">
+          <th>{{ header }}</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fixture of fixturesList">
+        <td><img id="logo" [src]="fixture.teams.home.logo" alt="Logo" /></td>
+        <td>{{ fixture.teams.home.name }}</td>
+        <td>{{ fixture.goals.home }}</td>
+        <td>-</td>
+        <td>{{ fixture.goals.away }}</td>
+        <td>{{ fixture.teams.away.name }}</td>
+        <td><img id="logo" [src]="fixture.teams.away.logo" alt="Logo" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="backButton" class="btn btn-primary" routerLink="../">Back</button>
+</div>

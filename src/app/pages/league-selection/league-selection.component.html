@@ -1,0 +1,50 @@
+<h5 id="title">Football Updates</h5>
+<ul class="nav justify-content-center">
+  <li id="topList" class="nav-item">
+    <a
+      *ngFor="let country of countries"
+      class="nav-link"
+      [ngClass]="{ 'a.nav-link active': country === selectedCountry }"
+      (click)="selectCountry(country)"
+      >{{ country }}</a
+    >
+  </li>
+</ul>
+<div class="container">
+  <br />
+  <h3>{{ selectedCountry }} Standings</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <ng-container *ngFor="let header of tableHeader">
+          <th>{{ header }}</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let standing of standingList"
+        (click)="sendFixturesData(standing)"
+        routerLink="teamDetails"
+      >
+        <td>{{ standing.rank }}</td>
+        <td><img id="logo" [src]="standing.team.logo" alt="Logo" /></td>
+        <td>{{ standing.team.name }}</td>
+        <td>
+          {{
+            standing.all.played + standing.away.played + standing.home.played
+          }}
+        </td>
+        <td>{{ standing.all.win + standing.away.win + standing.home.win }}</td>
+        <td>
+          {{ standing.all.lose + standing.away.lose + standing.home.lose }}
+        </td>
+        <td>
+          {{ standing.all.draw + standing.away.draw + standing.home.draw }}
+        </td>
+        <td>{{ standing.goalsDiff }}</td>
+        <td>{{ standing.points }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

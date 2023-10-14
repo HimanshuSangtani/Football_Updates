@@ -1,0 +1,15 @@
+.nav-link {
+  display: inline-flex;
+}
+.active {
+  color: red;
+}
+#topList {
+  margin-top: 15px;
+  border: 1px solid rgb(153, 151, 151);
+  border-radius: 5px;
+  background-color: rgb(247, 239, 239);
+}
+#title {
+  text-align: center;
+}

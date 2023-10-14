@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+#logo {
+  height: 32px;
+  width: 32px;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  text-align: center;
+  
+}
+li {
+  cursor: pointer;
+}
+tbody,td{
+  cursor: pointer;
+}
